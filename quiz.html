@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnatomyAR - Quiz</title>
+  <meta name="theme-color" content="#0a0b10" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand"><span class="dot"></span> <a href="index.html" style="color:inherit">AnatomyAR</a></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scan.html">AR Scanner</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="markers.html">Scan Cards</a>
+      <a href="compare.html">Compare</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <div class="quiz-wrap">
+      <div style="text-align:center;margin-bottom:18px">
+        <span class="eyebrow">Test yourself</span>
+        <h2 style="margin:4px 0">Anatomy Quiz</h2>
+        <p class="sub" id="q-sub">Pick a topic to begin.</p>
+      </div>
+      <div class="quiz-card" id="quiz-card"></div>
+    </div>
+  </main>
+
+  <script src="js/organs.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/quiz.js"></script>
+  <script src="js/assistant.js"></script>
+</body>
+</html>

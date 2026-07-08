@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnatomyAR - Study</title>
+  <meta name="theme-color" content="#0a0b10" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand"><span class="dot"></span> <a href="index.html" style="color:inherit">AnatomyAR</a></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scan.html">AR Scanner</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="markers.html">Scan Cards</a>
+      <a href="compare.html">Compare</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <div class="study">
+      <!-- 3D viewer -->
+      <div class="viewer-shell">
+        <div class="viewer">
+          <model-viewer id="mv" loading="eager" camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0"
+            rotation-per-second="20deg" interaction-prompt="none" shadow-intensity="1" exposure="1.1"
+            ar ar-modes="webxr scene-viewer quick-look"
+            style="--min-hotspot-opacity:0.3">
+            <button slot="ar-button" class="ar-btn">📷 View in AR</button>
+          </model-viewer>
+          <div class="viewer-tools">
+            <button class="tool active" id="t-rotate">⏸ Spin</button>
+            <button class="tool" id="t-listen">🔊 Listen</button>
+            <button class="tool" id="t-tour">✨ Guided tour</button>
+            <button class="tool" id="t-reset">⟳ Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- info -->
+      <div>
+        <h1 id="o-title"></h1>
+        <span class="sys-tag" id="o-sys"></span>
+        <p class="overview" id="o-overview"></p>
+        <div class="fact-grid" id="o-facts"></div>
+
+        <div class="panel">
+          <h3>🏷️ Parts &amp; functions <span style="font-weight:400;color:var(--muted);font-size:.82rem">- tap to hear</span></h3>
+          <div id="o-parts"></div>
+        </div>
+
+        <div class="funfact" id="o-fun"></div>
+
+        <div class="organ-nav">
+          <a class="btn ghost small" id="o-prev">← Prev</a>
+          <a class="btn ghost small" href="quiz.html" id="o-quiz">Take the quiz →</a>
+          <a class="btn ghost small" id="o-next">Next →</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>3D models © HuBMAP Consortium - CC BY 4.0.</span>
+      <span><a href="index.html">← All organs</a></span>
+    </div>
+  </footer>
+
+  <script src="js/organs.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/study.js"></script>
+  <script src="js/assistant.js"></script>
+</body>
+</html>

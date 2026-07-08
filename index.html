@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnatomyAR - Learn anatomy in Augmented Reality</title>
+  <meta name="theme-color" content="#0a0b10" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand"><span class="dot"></span> AnatomyAR</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scan.html">AR Scanner</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="markers.html">Scan Cards</a>
+      <a href="compare.html">Compare</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Augmented Reality · Anatomy</span>
+        <h1>See the body in <span class="grad">3D &amp; AR</span>, not on a flat page.</h1>
+        <p class="lead">Scan a card with your phone and a real, explorable 3D organ appears in the room.
+          Tap parts to learn them, hear them explained out loud, and test yourself - all in the browser, no app needed.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="scan.html">📷 Launch AR Scanner</a>
+          <a class="btn ghost" href="#organs">Explore organs</a>
+        </div>
+        <div class="pills">
+          <span class="pill">⚡ Loads in seconds</span>
+          <span class="pill">🔊 Voice explanations</span>
+          <span class="pill">🤖 AI assistant</span>
+          <span class="pill">📲 Installable app</span>
+        </div>
+      </div>
+      <div class="hero-viz reveal">
+        <model-viewer id="hero-model" loading="eager" camera-controls auto-rotate auto-rotate-delay="0"
+          rotation-per-second="22deg" interaction-prompt="none" disable-zoom
+          shadow-intensity="1" exposure="1.1"></model-viewer>
+        <span class="hero-badge">Drag to rotate · live 3D model</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="features">
+        <div class="feature reveal"><div class="ico">📷</div><h3>Scan &amp; reveal</h3><p>Point your camera at a card and the matching 3D organ appears, anchored in real space.</p></div>
+        <div class="feature reveal"><div class="ico">🏷️</div><h3>Interactive parts</h3><p>Tap any part of an organ to see its name and what it actually does.</p></div>
+        <div class="feature reveal"><div class="ico">🔊</div><h3>Hear it</h3><p>A built-in narrator reads each explanation aloud for hands-free study.</p></div>
+        <div class="feature reveal"><div class="ico">🧠</div><h3>AI &amp; quizzes</h3><p>Ask the assistant anything, then test yourself with instant quizzes.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="progress">
+      <div class="progress-panel" id="progress-panel"></div>
+    </section>
+
+    <section class="section" id="organs">
+      <span class="eyebrow">Explore</span>
+      <h2>Six organs, fully interactive</h2>
+      <p class="sub">Tap a card to open the immersive 3D study view.</p>
+      <div class="search-row">
+        <input type="search" id="organ-search" class="search-input" placeholder="Search organs or systems... (e.g. heart, circulatory)" autocomplete="off" />
+        <span class="search-count" id="search-count"></span>
+      </div>
+      <div class="grid" id="organ-grid"></div>
+      <p class="no-results" id="no-results" hidden>No organs match your search.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>3D models © HuBMAP Consortium - <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.</span>
+      <span>Built from the AR Anatomy project brief.</span>
+    </div>
+  </footer>
+
+  <script src="js/organs.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/assistant.js"></script>
+</body>
+</html>

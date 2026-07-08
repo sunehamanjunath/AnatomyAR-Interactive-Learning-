@@ -1,0 +1,16 @@
+{
+  "name": "AnatomyAR — Learn anatomy in AR",
+  "short_name": "AnatomyAR",
+  "description": "Scan a card and explore real 3D organs in augmented reality, with voice explanations, an AI assistant and quizzes.",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a0b10",
+  "theme_color": "#0a0b10",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

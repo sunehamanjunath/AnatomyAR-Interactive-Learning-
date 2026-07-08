@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AnatomyAR - Scan Cards</title>
+  <meta name="theme-color" content="#0a0b10" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/icon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="nav no-print">
+    <div class="brand"><span class="dot"></span> <a href="index.html" style="color:inherit">AnatomyAR</a></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scan.html">AR Scanner</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="markers.html">Scan Cards</a>
+      <a href="compare.html">Compare</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="section no-print" style="text-align:center">
+      <span class="eyebrow">Printable</span>
+      <h2 style="margin:4px 0">Scan Cards</h2>
+      <p class="sub">Print these (or show them on another screen), then scan them with the AR Scanner.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn primary" onclick="window.print()">🖨️ Print cards</button>
+        <a class="btn ghost" href="scan.html">📷 Open AR Scanner</a>
+      </div>
+    </section>
+
+    <div class="cards" id="cards"></div>
+    <p class="sub no-print" style="text-align:center;padding-bottom:30px">Tip: keep the whole black square visible. Cards work best ~6-8 cm wide on white paper.</p>
+  </main>
+
+  <script src="js/organs.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/markers.js"></script>
+</body>
+</html>
